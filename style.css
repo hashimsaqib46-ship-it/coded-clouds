@@ -6,209 +6,124 @@
 
 
 /* Navbar Styling */
-        .navbar {
-            background-color: white !important;
-            min-height: 80px;  
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            padding: 10px 20px;
-        }
+/* --- Desktop Styles (As it is) --- */
+.navbar {
+    background-color: white !important;
+    min-height: 80px;  
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 10px 20px;
+    z-index: 1050; /* Navbar ko sab se upar rakhne ke liye */
+}
 
-        
-        .logo {
-            width: 180px;   
-            height: 60px;   
-            background-image: url('./images/logo.webp'); 
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: left center;
-        }
+.logo {
+    width: 180px;   
+    height: 60px;   
+    background-image: url('./images/logo.webp'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
 
-        
-        #nav-btns {
-            background: transparent;
-            color: rgb(17, 17, 58);
-            border: none;
-            font-size: 11px;
-            font-weight: 600;
-            white-space: nowrap;
-            padding: 8px 10px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+#nav-btns {
+    background: transparent;
+    color: rgb(17, 17, 58);
+    border: none;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 8px 10px;
+    transition: all 0.3s ease;
+    position: relative;
+}
 
-        /* Hover effect for menu buttons */
-        #nav-btns::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 5px;
-            left: 50%;
-            background-color: rgb(17, 17, 58);
-            transition: all 0.3s;
-            transform: translateX(-50%);
-        }
+#nav-btns:hover { color: #4da6ff; }
 
-        #nav-btns:hover::after {
-            width: 80%;
-        }
+#nav-btns::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    background-color: rgb(17, 17, 58);
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
 
-        #nav-btns:hover {
-            color: #4da6ff;
-        }
+#nav-btns:hover::after { width: 80%; }
 
-        
-        #nav-career { 
-            background-color: rgb(17, 17, 58);
-            color: white;
-            border-radius: 50px;
-            border: 1px solid rgb(17, 17, 58);
-            font-size: 10px;
-            font-weight: 600;
-            height: 40px;
-            padding: 0 20px;
-            transition: all 0.3s;
-        }
+#nav-career { 
+    background-color: rgb(17, 17, 58);
+    color: white;
+    border-radius: 50px;
+    border: 1px solid rgb(17, 17, 58);
+    font-size: 10px;
+    font-weight: 600;
+    height: 40px;
+    padding: 0 20px;
+}
 
-        #nav-career:hover{
-            background-color: white;
-            color: rgb(17, 17, 58); 
-        }
+#nav-talk { 
+    background-color: white;
+    color: rgb(17, 17, 58);
+    border: 1px solid rgb(17, 17, 58);
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 600;
+    height: 40px;
+    padding: 0 20px;
+}
 
-        #nav-talk{ 
-            background-color: white;
-            color: rgb(17, 17, 58);
-            border: 1px solid rgb(17, 17, 58);
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 600;
-            height: 40px;
-            padding: 0 20px;
-            transition: all 0.3s;
-        }
-        #nav-talk:hover{
-            background-color: rgb(17, 17, 58);
-            color: white; 
-        }
+/* --- IMPORTANT: Offcanvas Below Navbar --- */
+ 
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: white;
+        padding: 20px;
+        border-top: 1px solid #eee;
+    }
 
-        
-        .custom-offcanvas {
-            height: auto !important;  
-            min-height: 40vh;
-            max-height: 80vh;
-            background-color: #fff;
-            border-bottom: 4px solid rgb(17, 17, 58);
-        }
+    /* 2/2 Grid for Menu Buttons */
+    .center-nav-container {
+        display: flex !important;
+        flex-direction: row !important; /* Row mein rakhna hai taaki wrap ho sakein */
+        flex-wrap: wrap; /* Buttons ko agli line mein bhejne ke liye */
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px 0; /* Vertical gap 10px */
+    }
 
-        .offcanvas-header {
-            border-bottom: 1px solid #eee;
-            padding: 20px 30px;
-        }
+    #nav-btns {
+        /* 50% width minus thoda sa gap taaki 2 buttons fit aayein */
+        flex: 0 0 calc(50% - 5px); 
+        text-align: center;
+        border: 1px solid #f0f0f0; /* Mobile par thoda border touch acha lagta hai */
+        border-radius: 5px;
+        padding: 12px 5px;
+    }
 
-        .offcanvas-title {
-            font-weight: 700;
-            color: rgb(17, 17, 58);
-            letter-spacing: 1px;
-        }
+    /* Right buttons (Explore/Talk) full width hi ache lagenge niche */
+    .right-nav-container {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+        gap: 10px;
+    }
 
-        .offcanvas-body {
-            padding: 30px 50px;
-        }
+    #nav-career, #nav-talk {
+        width: 100%;
+        margin-bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .offcanvas-content h4 {
-            color: rgb(17, 17, 58);
-            font-size: 18px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .offcanvas-content ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .offcanvas-content ul li {
-            margin-bottom: 8px;
-            color: #555;
-            font-size: 15px;
-            padding-left: 15px;
-            border-left: 2px solid #eee;
-        }
-
-         
-        @media (max-width: 992px) {
-            .navbar {
-                padding: 10px 15px; 
-            }
-             
-            .center-nav-container {
-                display: flex;
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 5px;
-            }
-        }
-
-        
-        @media (max-width: 768px) {
-            .navbar {
-                min-height: auto;
-                padding: 15px 10px;
-            }
-
-            .navbar .container-fluid {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-
-          
-            .logo {
-                width: 150px;
-                height: 50px;
-                background-position: center;
-            }
-
-            
-            .center-nav-container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;  
-                width: 100%;
-            }
-
-            #nav-btns {
-                font-size: 12px;
-                padding: 8px 12px;
-                background-color: #ffffff; 
-                border-radius: 6px;
-                flex: 1 1 40%;  
-                text-align: center;
-            }
-            
-            #nav-btns:hover::after {
-                width: 0;  
-            }
-
-            
-            .right-nav-container {
-                width: 100%;
-                justify-content: center;
-                margin-top: 5px;
-            }
-
-            #nav-career, #nav-talk {
-                font-size: 11px;
-                height: 36px;
-                padding: 0 15px;
-                width: 45%;  
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-     
+    /* Offcanvas Position Adjustment */
+    .offcanvas {
+        top: 80px !important; 
+    }
+}
 
  /*heroooooooooooooooooooooooooooo*/
  
