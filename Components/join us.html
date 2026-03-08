@@ -30,6 +30,9 @@
         mix-blend-mode: difference;
         background-color: white !important;
     }
+
+
+    
 </style>
 
 <script>
@@ -169,6 +172,27 @@
             box-shadow: 0 20px 40px rgba(17, 17, 58, 0.2);
         }
 
+        .main-btn2{
+ padding: 20px 50px;
+             font-size: 1.1rem;
+            font-weight: 700;
+            background:white;
+            color: var(--primary-navy);
+            border: 1px solid var(--primary-navy);
+            border-radius: 35px;
+            cursor: pointer; 
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+    }
+
+    .main-btn2:hover{
+        
+            background: var(--primary-navy);
+            color: white;
+            border: none;
+    }
+
         /* --- Full Screen Form Overlay (Fixed) --- */
         #formOverlay {
             position: fixed;
@@ -270,8 +294,13 @@
             <h1>Elevate <br> With Us.</h1>
             <p>Join the Coded Clouds ecosystem. We are expanding our global footprint and we want <b>you</b> to be part of the journey.</p>
             <button class="main-btn" onclick="showForm()">
-                Get Started <i class="fas fa-chevron-right"></i>
+               Employee <i class="fas fa-chevron-right"></i>
             </button>
+              <a href="./Investor.html">
+                <button class="main-btn2 " >
+               Investor <i class="fas fa-chart-line" style="font-size: 24px;"></i>
+            </button>
+              </a>
         </div>
     </div>
 
