@@ -3,249 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mutual Non-Disclosure Agreement | Coded Team Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Non-Disclosure Agreement (NDA) | CodedClouds</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #11113a; /* Your Navy Blue */
-            --secondary-color: #00d2ff; /* Your Cyan */
-            --text-color: #333;
-            --bg-color: #f4f7f9;
+            --navy: #11113a;
+            --cyan: #00d2ff;
+            --slate: #475569;
+            --bg: #f8fafc;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 40px 20px;
-            line-height: 1.6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--slate);
+            line-height: 1.7;
+            padding: 40px 0;
         }
 
         .nda-container {
-            max-width: 850px;
+            max-width: 950px;
             margin: 0 auto;
-            background: #fff;
-            padding: 60px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            border-top: 10px solid var(--primary-color);
+            background: #ffffff;
+            padding: 70px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border-top: 10px solid var(--navy);
         }
 
-        .header {
+        .nda-header {
             text-align: center;
-            margin-bottom: 50px;
+            border-bottom: 2px solid #f1f5f9;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
         }
 
-        .logo-placeholder {
+        .nda-header h1 {
+            color: var(--navy);
             font-weight: 800;
-            font-size: 28px;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            font-size: 2.4rem;
             margin-bottom: 10px;
         }
 
-        h1 {
-            font-size: 24px;
-            color: var(--primary-color);
-            margin-top: 10px;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--secondary-color);
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .meta-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-            font-size: 14px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-
-        .section {
-            margin-bottom: 25px;
-        }
-
-        .section h3 {
-            color: var(--primary-color);
-            font-size: 18px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
+        .last-update {
+            color: var(--cyan);
             font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
 
-        .section h3::before {
-            content: '';
-            width: 8px;
-            height: 8px;
-            background: var(--secondary-color);
-            display: inline-block;
-            margin-right: 10px;
-            border-radius: 50%;
+        h2 {
+            color: var(--navy);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        p, ul li {
-            margin: 0 0 15px 0;
+        h3 {
+            color: var(--navy);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 25px;
+        }
+
+        p, li {
+            font-size: 1rem;
             text-align: justify;
         }
 
-        ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
         }
 
-        .signature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            margin-top: 60px;
+        .bullet-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
         }
 
-        .sig-box {
-            border-top: 1px solid #ccc;
-            padding-top: 15px;
+        .bullet-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--cyan);
+            font-size: 0.9rem;
         }
 
-        .sig-label {
-            font-weight: 600;
-            font-size: 13px;
-            color: #777;
-            text-transform: uppercase;
+        .highlight-section {
+            background: rgba(17, 17, 58, 0.02);
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
         }
 
-        .print-btn {
-            display: block;
-            width: fit-content;
-            margin: 30px auto;
-            background: var(--primary-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
+        .footer-info {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #f1f5f9;
+            text-align: center;
         }
 
-        .print-btn:hover {
-            background: var(--secondary-color);
-            transform: translateY(-2px);
+        @media (max-width: 768px) {
+            .nda-container { padding: 30px 20px; margin: 15px; }
+            .nda-header h1 { font-size: 1.8rem; }
         }
 
         @media print {
-            .print-btn { display: none; }
-            body { padding: 0; background: white; }
-            .nda-container { box-shadow: none; border: none; padding: 20px; width: 100%; }
-        }
-
-        @media (max-width: 600px) {
-            .nda-container { padding: 30px 20px; }
-            .signature-grid { grid-template-columns: 1fr; }
-            .meta-info { flex-direction: column; gap: 10px; }
+            body { background: white; padding: 0; }
+            .nda-container { box-shadow: none; border: none; width: 100%; padding: 0; }
+            .no-print { display: none; }
         }
     </style>
 </head>
 <body>
 
+<div class="container">
     <div class="nda-container">
-        <div class="header">
-            <div class="logo-placeholder">CODED TEAM SOLUTIONS</div>
+        <div class="nda-header">
+            <span class="last-update">Last Updated: 2024</span>
             <h1>Non-Disclosure Agreement</h1>
+            <p>Confidentiality & Proprietary Rights Protocol</p>
         </div>
 
-        <div class="meta-info">
-            <div><strong>Effective Date:</strong> ___________, 2026</div>
-            <div><strong>Document ID:</strong> CT-NDA-2026-001</div>
-        </div>
+        <div class="nda-content">
+            <p>At CodedClouds, the protection of confidential and proprietary information is a fundamental part of our professional standards. During the course of consultations, project discussions, software development engagements, and business collaborations, sensitive information may be exchanged between CodedClouds and its clients, partners, contractors, or stakeholders.</p>
+            
+            <p>This Non-Disclosure Agreement (“NDA”) outlines the principles governing the protection, handling, and permitted use of confidential information shared with or by CodedClouds. The purpose of this policy is to ensure that all parties involved maintain the highest standards of confidentiality, integrity, and professional responsibility.</p>
 
-        <div class="section">
-            <p>This Non-Disclosure Agreement (“Agreement”) is made and entered into on the Effective Date stated above by and between Coded Team Solutions, hereinafter referred to as the “Disclosing Party,” and ________________________, hereinafter referred to as the “Receiving Party.”</p>
-            <p>The parties agree to enter into this Agreement for the purpose of protecting certain confidential and proprietary information that may be disclosed during the course of business discussions, collaborations, or professional engagements.</p>
-        </div>
+            <h2>What is a Non-Disclosure Agreement (NDA)</h2>
+            <p>A Non-Disclosure Agreement is a legally recognized arrangement between two or more parties that establishes obligations regarding the protection of confidential information. Such agreements ensure that sensitive business, technical, financial, or operational information shared during professional engagement is not disclosed to unauthorized individuals or entities and is used only for legitimate business purposes.</p>
 
-        <div class="section">
-            <h3>1. Definition of Confidential Information</h3>
-            <p>For the purposes of this Agreement, “Confidential Information” shall include, but not be limited to, any non-public information disclosed by the Disclosing Party to the Receiving Party, whether in written, electronic, visual, or oral form.</p>
-            <p>Confidential Information includes, but is not limited to:</p>
-            <ul>
-                <li>Software source code and development architecture</li>
+            <h2>Purpose of This Agreement</h2>
+            <p>The purpose of this NDA is to safeguard confidential and proprietary information disclosed during the course of business discussions or professional engagement with CodedClouds involving:</p>
+            <ul class="bullet-list">
+                <li>Project consultations & software development engagements</li>
+                <li>System architecture discussions</li>
+                <li>Business partnerships & technical collaborations</li>
+                <li>Internal or external consulting activities</li>
+            </ul>
+
+            <h2>Definition of Confidential Information</h2>
+            <p>Confidential Information refers to any non-public information disclosed by CodedClouds or its partners that is reasonably considered sensitive or proprietary, including:</p>
+            <ul class="bullet-list">
+                <li>Business plans, strategies, and operational processes</li>
+                <li>Financial data, projections, and internal reporting</li>
+                <li>Client databases, contact lists, and project documentation</li>
+                <li>Proprietary software systems and technical architecture</li>
+                <li>Source code, algorithms, and development frameworks</li>
                 <li>User interface (UI) and user experience (UX) designs</li>
-                <li>Business models, strategies, and operational processes</li>
-                <li>Client lists, databases, and internal documentation</li>
-                <li>Technical methods, tools, and proprietary systems</li>
-                <li>Any other information clearly identified as confidential or reasonably understood to be confidential.</li>
+                <li>Product concepts, prototypes, and technical specifications</li>
+                <li>Marketing strategies, research data, and analytics</li>
+                <li>Intellectual property including patents, copyrights, and trademarks</li>
+                <li>Internal documentation, methods, or development tools</li>
             </ul>
-        </div>
 
-        <div class="section">
-            <h3>2. Obligations of the Receiving Party</h3>
-            <p>The Receiving Party agrees to:</p>
-            <p>a. Maintain all Confidential Information in strict confidence and exercise a reasonable degree of care to protect such information.</p>
-            <p>b. Use the Confidential Information solely for the purpose of evaluating or participating in business or professional activities with the Disclosing Party.</p>
-            <p>c. Not disclose, distribute, reproduce, publish, or otherwise make available the Confidential Information to any third party without the prior written consent of the Disclosing Party.</p>
-            <p>d. Take all reasonable measures to prevent unauthorized access, disclosure, or misuse of the Confidential Information.</p>
-        </div>
+            <h2>Obligations of the Receiving Party</h2>
+            <h3>Confidential Handling</h3>
+            <p>All confidential information must be treated with strict confidentiality and handled with a reasonable standard of care.</p>
+            <h3>Restricted Disclosure</h3>
+            <p>Confidential information shall not be disclosed, shared, or communicated to any third party without prior written consent from the disclosing party.</p>
+            <h3>Permitted Use</h3>
+            <p>The information may only be used for the specific business purpose for which it was disclosed.</p>
 
-        <div class="section">
-            <h3>3. Exclusions from Confidential Information</h3>
-            <p>Confidential Information shall not include information that:</p>
-            <ul>
-                <li>Is or becomes publicly available through no breach of this Agreement by the Receiving Party</li>
-                <li>Was lawfully known to the Receiving Party prior to disclosure by the Disclosing Party</li>
-                <li>Is received from a third party without any breach of confidentiality obligations</li>
-                <li>Is independently developed by the Receiving Party without reference to the Confidential Information.</li>
-            </ul>
-        </div>
+            <h2>Exceptions to Confidentiality</h2>
+            <p>The confidentiality obligations outlined in this agreement shall not apply to information that is already publicly available, was lawfully obtained from a third party, or is required to be disclosed by applicable law, regulation, or court order.</p>
 
-        <div class="section">
-            <h3>4. Term and Duration</h3>
-            <p>This Agreement shall remain in effect from the Effective Date until terminated by either party in writing.</p>
-            <p>Notwithstanding termination, the Receiving Party’s obligation to maintain the confidentiality of the disclosed information shall continue for a period of five (5) years from the date such information was disclosed.</p>
-        </div>
+            <h2>Duration of Confidentiality</h2>
+            <p>Unless otherwise agreed in writing, confidentiality obligations generally remain effective for five (5) years following the disclosure. Obligations may extend indefinitely for highly sensitive proprietary or intellectual property information.</p>
 
-        <div class="section">
-            <h3>5. Legal Remedies</h3>
-            <p>The Receiving Party acknowledges that unauthorized disclosure or misuse of Confidential Information may cause significant harm to the Disclosing Party.</p>
-            <p>In the event of a breach or threatened breach of this Agreement, the Disclosing Party shall be entitled to seek legal remedies, including but not limited to:</p>
-            <ul>
-                <li>Injunctive relief</li>
-                <li>Monetary damages</li>
-                <li>Any other remedies available under applicable law.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>6. Governing Law</h3>
-            <p>This Agreement shall be governed by and construed in accordance with the applicable laws and jurisdiction governing the Disclosing Party’s place of business, unless otherwise mutually agreed in writing by both parties.</p>
-        </div>
-
-        <div class="section">
-            <h3>7. Entire Agreement</h3>
-            <p>This Agreement constitutes the entire understanding between the parties concerning the protection of Confidential Information and supersedes all prior discussions or agreements relating to the subject matter herein.</p>
-            <p>Any amendments or modifications to this Agreement must be made in writing and signed by both parties.</p>
-        </div>
-
-        <div class="signature-grid">
-            <div class="sig-box">
-                <div class="sig-label">Disclosing Party (Coded Team Solutions)</div>
-                <br><br>
-                <span>Signature: ___________________</span>
+            <div class="highlight-section">
+                <h2>8. Protection of Systems, Architecture, and Business Methods</h2>
+                <p>CodedClouds may disclose certain proprietary methodologies, technical structures, and operational strategies. The Receiving Party agrees that it shall not:</p>
+                <ul class="bullet-list">
+                    <li>Reproduce, replicate, or imitate any disclosed software architecture or technical framework.</li>
+                    <li>Reverse engineer or attempt to reconstruct proprietary systems or methodologies.</li>
+                    <li>Use disclosed technical concepts to independently develop similar software, platforms, or services.</li>
+                    <li>Disclose such methodologies to third parties for the purpose of building competing systems.</li>
+                </ul>
             </div>
-            <div class="sig-box">
-                <div class="sig-label">Receiving Party (Client/Employee)</div>
-                <br><br>
-                <span>Signature: ___________________</span>
+
+            <div class="highlight-section">
+                <h2>9. Non-Circumvention</h2>
+                <p>The Receiving Party acknowledges that CodedClouds may introduce certain resources, personnel, or partners. The Receiving Party agrees that it shall not, without prior written consent:</p>
+                <ul class="bullet-list">
+                    <li>Directly or indirectly solicit, hire, or engage any employee, contractor, or partner introduced by CodedClouds.</li>
+                    <li>Bypass or circumvent CodedClouds to establish direct business relationships with associated individuals or entities.</li>
+                    <li>Use professional connections provided by CodedClouds to obtain similar services outside the organization.</li>
+                </ul>
+                <p>This restriction shall apply for a period of <strong>twenty-four (24) months</strong> following the last interaction.</p>
+            </div>
+
+            <h2>Enforcement and Legal Remedies</h2>
+            <p>Unauthorized disclosure may cause significant and irreparable harm. In the event of a breach, CodedClouds reserves the right to pursue legal remedies, including injunctive relief, financial damages, and recovery of legal costs.</p>
+
+            <div class="footer-info">
+                <p>For questions regarding this Agreement, contact: <strong>hashim@codedclouds.org</strong></p>
+                <p>&copy; 2026 CodedClouds. All Rights Reserved.</p>
             </div>
         </div>
     </div>
-
-    <button class="print-btn" onclick="window.print()">Download as PDF / Print</button>
+</div>
 
 </body>
 </html>
